@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SommusPreVenda.Domain.Interfaces.Repositories
 {
-    public interface IClienteService
+    public interface IClienteRepository
     {
         Cliente Get(int clienteId);
 
-        List<Cliente> GetAll();  
+        List<Cliente> GetAll();
     }
 }

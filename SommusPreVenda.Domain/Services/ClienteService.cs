@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SommusPreVenda.Domain.Interfaces.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace SommusPreVenda.Domain.Services
 {
     public class ClienteService
     {
+        private readonly IDataContext _dataContext;
+        private readonly IClienteRepository _clienteRepository;
+
         public ResponseService ResponseService { get; set; }
 
         private ClienteService()
@@ -15,5 +19,12 @@ namespace SommusPreVenda.Domain.Services
             ResponseService = new ResponseService();
         } 
 
+        public ClienteService(IDataContext dataContext, IClienteRepository clienteRepository)
+        {
+            _dataContext = dataContext;
+            _clienteRepository = clienteRepository;
+            ResponseService = new ResponseService();            
+        }
+        
     }
 }

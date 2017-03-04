@@ -1,12 +1,10 @@
-﻿using SommusPreVenda.Domain.Interfaces.Repositories;
+﻿using MySql.Data.MySqlClient;
+using SommusPreVenda.Domain.Entities;
+using SommusPreVenda.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SommusPreVenda.Domain.Entities;
 using System.Data;
-using MySql.Data.MySqlClient;
+using System.Text;
 
 namespace SommusPreVenda.Data.ADO.Repositories
 {
@@ -16,10 +14,10 @@ namespace SommusPreVenda.Data.ADO.Repositories
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append("SELECT * FROM Srv_Pessoas        ");
-            query.Append("WHERE                            ");
-            query.Append("pes_cliente = 1 AND              ");
-            query.Append("pes_codigo = ?codigo             ");
+            query.Append(" SELECT * FROM srv_pessoas ");
+            query.Append(" WHERE                     ");
+            query.Append(" pes_cliente = 1 AND       ");
+            query.Append(" pes_codigo = ?codigo      ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
             mySqlCommand.Parameters.AddWithValue("?codigo", clienteId);
@@ -29,7 +27,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
                 var row = dataTable.Rows[0];
                 var cliente = new Cliente()
                 {
-                    ClienteId = Convert.ToInt32(row["clienteId"]),
+                    ClienteId = Convert.ToInt32(row["pes_codigo"]),
                     Nome = row["pes_nome"].ToString(),
                     Endereco = row["pes_end_logradouro"].ToString()
                 };
@@ -38,13 +36,13 @@ namespace SommusPreVenda.Data.ADO.Repositories
             return new Cliente();            
         }
 
-        public List<Cliente> GetAll()
+        public List<Cliente> Get()
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append("SELECT * FROM Srv_Pessoas");
-            query.Append("WHERE                    ");
-            query.Append("pes_cliente = 1          ");
+            query.Append(" SELECT * FROM srv_pessoas ");
+            query.Append(" WHERE                     ");
+            query.Append(" pes_cliente = 1           ");
             var mySqlCommand = new MySqlCommand(query.ToString(), 
                 DataContext.MySqlConnection, 
                 DataContext.MySqlTransaction);
@@ -57,7 +55,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
                     var row = dataTable.Rows[i];
                     var cliente = new Cliente()
                     {
-                        ClienteId = Convert.ToInt32(row["clienteId"]),
+                        ClienteId = Convert.ToInt32(row["pes_codigo"]),
                         Nome = row["pes_nome"].ToString(),
                         Endereco = row["pes_end_logradouro"].ToString()
                     };

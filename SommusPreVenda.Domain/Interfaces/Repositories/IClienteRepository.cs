@@ -11,6 +11,6 @@ namespace SommusPreVenda.Domain.Interfaces.Repositories
     {
         Cliente Get(int clienteId);
 
-        List<Cliente> GetAll();
+        List<Cliente> Get();
     }
 }

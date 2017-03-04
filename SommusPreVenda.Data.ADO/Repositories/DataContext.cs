@@ -11,7 +11,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
 
         public void BeginTransaction()
         {
-            MySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlConnectionString"].ConnectionString);
+            MySqlConnection = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlConnectionStringSrv"].ConnectionString);
             MySqlConnection.Open();
             MySqlTransaction = MySqlConnection.BeginTransaction();
         }

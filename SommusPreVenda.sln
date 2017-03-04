@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B840E0DC-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SommusPreVenda.Data.ADO", "SommusPreVenda.Data.ADO\SommusPreVenda.Data.ADO.csproj", "{75B200A0-D79F-4696-ACBB-54077DEEB2F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SommusPreVenda.Test", "SommusPreVenda.Test\SommusPreVenda.Test.csproj", "{6A36B243-3418-497C-AF62-C70FFA1CCEA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{75B200A0-D79F-4696-ACBB-54077DEEB2F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75B200A0-D79F-4696-ACBB-54077DEEB2F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75B200A0-D79F-4696-ACBB-54077DEEB2F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +47,6 @@ Global
 		{0FA76EC4-91D5-40CB-A8E7-952C2F3155D0} = {62981204-2CA4-4950-AB1B-86F79EEEEDE7}
 		{2299EA9C-52D6-4424-AB14-8755901DFA35} = {A0A2A4F2-55E5-45E5-966E-5A4DE299E019}
 		{75B200A0-D79F-4696-ACBB-54077DEEB2F3} = {B840E0DC-A2B7-487F-97A9-CEEAF9A8C242}
+		{6A36B243-3418-497C-AF62-C70FFA1CCEA6} = {A0A2A4F2-55E5-45E5-966E-5A4DE299E019}
 	EndGlobalSection
 EndGlobal

@@ -40,7 +40,6 @@ namespace SommusPreVenda.Application.DependencyInjection.Services
             _unityContainer
                 .RegisterType<IDataContext, DataContext>(new InjectionConstructor())
                 .RegisterType<IClienteRepository, ClienteRepository>(new InjectionConstructor());
-
         }
     }
 }

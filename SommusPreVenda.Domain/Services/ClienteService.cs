@@ -19,7 +19,9 @@ namespace SommusPreVenda.Domain.Services
             ResponseService = new ResponseService();
         } 
 
-        public ClienteService(IDataContext dataContext, IClienteRepository clienteRepository)
+        public ClienteService(
+            IDataContext dataContext,
+            IClienteRepository clienteRepository)
         {
             _dataContext = dataContext;
             _clienteRepository = clienteRepository;

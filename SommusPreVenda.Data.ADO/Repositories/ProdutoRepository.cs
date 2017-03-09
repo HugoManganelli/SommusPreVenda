@@ -17,12 +17,12 @@ namespace SommusPreVenda.Data.ADO.Repositories
             var dataTable = new DataTable();
             var query = new StringBuilder();
             query.Append(" SELECT * FROM srv_produtos ");
-            query.Append(" WHERE                      ");
-            query.Append(" prd_ativo = 1 AND          ");
-            query.Append(" prd_codigo = ?codigo       ");
             query.Append(" LEFT JOIN                  ");
             query.Append(" srv_produtos_estoque ON    ");
             query.Append(" est_produto = prd_codigo   ");
+            query.Append(" WHERE                      ");
+            query.Append(" prd_ativo = 1 AND          ");
+            query.Append(" prd_codigo = ?codigo       ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(),DataContext.MySqlConnection, DataContext.MySqlTransaction);
             mySqlCommand.Parameters.AddWithValue("?codigo", produtoId);
@@ -48,11 +48,11 @@ namespace SommusPreVenda.Data.ADO.Repositories
             var dataTable = new DataTable();
             var query = new StringBuilder();
             query.Append(" SELECT * FROM srv_produtos ");
-            query.Append(" WHERE                      ");
-            query.Append(" prd_ativo = 1 AND          ");            
             query.Append(" LEFT JOIN                  ");
             query.Append(" srv_produtos_estoque ON    ");
             query.Append(" est_produto = prd_codigo   ");
+            query.Append(" WHERE                      ");
+            query.Append(" prd_ativo = 1              ");            
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);            
             dataTable.Load(mySqlCommand.ExecuteReader());

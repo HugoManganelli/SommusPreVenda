@@ -13,6 +13,7 @@ namespace SommusPreVenda.Application.DependencyInjection.Services
         private static Container _container;
         private readonly IUnityContainer _unityContainer;
         private readonly IClienteRepository _clienteService;
+        private readonly IProdutoRepository _produtoService;
 
         private Container()
         {
@@ -39,7 +40,8 @@ namespace SommusPreVenda.Application.DependencyInjection.Services
         {
             _unityContainer
                 .RegisterType<IDataContext, DataContext>(new InjectionConstructor())
-                .RegisterType<IClienteRepository, ClienteRepository>(new InjectionConstructor());
+                .RegisterType<IClienteRepository, ClienteRepository>(new InjectionConstructor())
+                .RegisterType<IProdutoRepository, ProdutoRepository>(new InjectionConstructor());
         }
     }
 }

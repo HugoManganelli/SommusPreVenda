@@ -1,10 +1,8 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SommusPreVenda.Application.ViewModels.Cliente;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SommusPreVenda.Application.Application;
+using SommusPreVenda.Application.ViewModels.Cliente;
 using SommusPreVenda.Domain.Enums;
+using System.Collections.Generic;
 
 namespace SommusPreVenda.Test.Application
 {

@@ -34,6 +34,7 @@
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\DataContext.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">

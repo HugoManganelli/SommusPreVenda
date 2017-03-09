@@ -4,11 +4,7 @@ using SommusPreVenda.Application.ViewModels.Cliente;
 using SommusPreVenda.Domain.Entities;
 using SommusPreVenda.Domain.Interfaces.Repositories;
 using SommusPreVenda.Domain.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SommusPreVenda.Application.Application
 {

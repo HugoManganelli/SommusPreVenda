@@ -18,7 +18,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
             var query = new StringBuilder();
             query.Append(" SELECT * FROM srv_operadores ");
             query.Append(" WHERE ope_nome = ?login AND  ");
-            query.Append(" ope_senha = ?senha AND       ");
+            query.Append(" ope_senha_exp = ?senha AND   ");
             query.Append(" ope_ativo = 1                ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);

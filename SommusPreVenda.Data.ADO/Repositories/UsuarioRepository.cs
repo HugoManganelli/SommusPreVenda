@@ -36,7 +36,6 @@ namespace SommusPreVenda.Data.ADO.Repositories
                 };
                 return usuario;
             }
-
             return new Usuario();
         }
     }

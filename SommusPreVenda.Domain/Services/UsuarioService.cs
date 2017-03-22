@@ -1,5 +1,6 @@
 ﻿using SommusPreVenda.Domain.Entities;
 using SommusPreVenda.Domain.Enums;
+using SommusPreVenda.Domain.Interfaces.Encryption;
 using SommusPreVenda.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace SommusPreVenda.Domain.Services
     {
         private readonly IDataContext _dataContext;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly ICriptografiaMD5Service _criptografiaMD5;
 
         public ResponseService ResponseService { get; set; }
 
@@ -23,19 +25,22 @@ namespace SommusPreVenda.Domain.Services
 
         public UsuarioService(
             IDataContext dataContext,
-            IUsuarioRepository usuarioRepository)
+            IUsuarioRepository usuarioRepository,
+            ICriptografiaMD5Service criptografiaMD5)
         {
             _dataContext = dataContext;
             _usuarioRepository = usuarioRepository;
+            _criptografiaMD5 = criptografiaMD5;
             ResponseService = new ResponseService();
         }
 
         public Usuario Get(string login, string senha)
         {
-            var usuario = new Usuario();
+            var usuario = new Usuario();            
             try
             {
-                _dataContext.BeginTransaction();
+                _dataContext.BeginTransaction();                
+                senha = _criptografiaMD5.CriptografaMD5(senha.PadRight(50, ' '));
                 usuario = _usuarioRepository.Get(login, senha);
 
                 if (usuario.UsuarioId == 0)

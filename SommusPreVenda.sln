@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SommusPreVenda.Data.ADO", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SommusPreVenda.ApplicationTest", "SommusPreVenda.Test\SommusPreVenda.ApplicationTest.csproj", "{6A36B243-3418-497C-AF62-C70FFA1CCEA6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{28210EB7-ADD2-45A5-BB8B-64A0088664F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SommusPrevenda.Infra", "SommusPrevenda.Infra\SommusPrevenda.Infra.csproj", "{F08C9F4E-C5FB-4777-8C7E-148E22A36EED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A36B243-3418-497C-AF62-C70FFA1CCEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08C9F4E-C5FB-4777-8C7E-148E22A36EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08C9F4E-C5FB-4777-8C7E-148E22A36EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08C9F4E-C5FB-4777-8C7E-148E22A36EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08C9F4E-C5FB-4777-8C7E-148E22A36EED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +56,6 @@ Global
 		{2299EA9C-52D6-4424-AB14-8755901DFA35} = {A0A2A4F2-55E5-45E5-966E-5A4DE299E019}
 		{75B200A0-D79F-4696-ACBB-54077DEEB2F3} = {B840E0DC-A2B7-487F-97A9-CEEAF9A8C242}
 		{6A36B243-3418-497C-AF62-C70FFA1CCEA6} = {A0A2A4F2-55E5-45E5-966E-5A4DE299E019}
+		{F08C9F4E-C5FB-4777-8C7E-148E22A36EED} = {28210EB7-ADD2-45A5-BB8B-64A0088664F2}
 	EndGlobalSection
 EndGlobal

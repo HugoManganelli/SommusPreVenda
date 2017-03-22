@@ -77,6 +77,10 @@
       <Project>{0fa76ec4-91d5-40cb-a8e7-952c2f3155d0}</Project>
       <Name>SommusPreVenda.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SommusPrevenda.Infra\SommusPrevenda.Infra.csproj">
+      <Project>{f08c9f4e-c5fb-4777-8c7e-148e22a36eed}</Project>
+      <Name>SommusPrevenda.Infra</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

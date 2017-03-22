@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using SommusPrevenda.Infra.Encryption;
 using SommusPreVenda.Application.DependencyInjection.Services;
 using SommusPreVenda.Application.ViewModels.Usuario;
 using SommusPreVenda.Domain.Entities;
+using SommusPreVenda.Domain.Interfaces.Encryption;
 using SommusPreVenda.Domain.Interfaces.Repositories;
 using SommusPreVenda.Domain.Services;
 using System;
@@ -16,7 +18,8 @@ namespace SommusPreVenda.Application.Application
     {
         private static readonly UsuarioService _usuarioService = new UsuarioService(
             DependencyInjectionService.Resolve<IDataContext>(),
-            DependencyInjectionService.Resolve<IUsuarioRepository>()
+            DependencyInjectionService.Resolve<IUsuarioRepository>(),
+            DependencyInjectionService.Resolve<ICriptografiaMD5Service>()
             );
 
         public static string ResponseMessage

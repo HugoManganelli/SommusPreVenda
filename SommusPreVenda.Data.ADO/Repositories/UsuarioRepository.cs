@@ -1,12 +1,9 @@
-﻿using SommusPreVenda.Domain.Interfaces.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
 using SommusPreVenda.Domain.Entities;
+using SommusPreVenda.Domain.Interfaces.Repositories;
+using System;
 using System.Data;
-using MySql.Data.MySqlClient;
+using System.Text;
 
 namespace SommusPreVenda.Data.ADO.Repositories
 {

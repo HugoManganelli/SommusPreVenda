@@ -31,16 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\FormaPagamento.cs" />
     <Compile Include="Entities\Produto.cs" />
     <Compile Include="Entities\Usuario.cs" />
     <Compile Include="Enums\ResponseTypeEnum.cs" />
     <Compile Include="Interfaces\Encryption\ICriptografiaMD5Service.cs" />
     <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IDataContext.cs" />
+    <Compile Include="Interfaces\Repositories\IFormaPagamentoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IProdutoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\FormaPagamentoService.cs" />
     <Compile Include="Services\ProdutoService.cs" />
     <Compile Include="Services\ResponseService.cs" />
     <Compile Include="Services\UsuarioService.cs" />

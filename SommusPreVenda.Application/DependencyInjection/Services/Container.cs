@@ -43,7 +43,8 @@ namespace SommusPreVenda.Application.DependencyInjection.Services
                 .RegisterType<IClienteRepository, ClienteRepository>(new InjectionConstructor())
                 .RegisterType<IProdutoRepository, ProdutoRepository>(new InjectionConstructor())
                 .RegisterType<IUsuarioRepository, UsuarioRepository>(new InjectionConstructor())
-                .RegisterType<ICriptografiaMD5Service, CriptografiaMD5Service>(new  InjectionConstructor());
+                .RegisterType<ICriptografiaMD5Service, CriptografiaMD5Service>(new  InjectionConstructor())
+                .RegisterType<IFormaPagamentoRepository, FormaPagamentoRepository>(new InjectionConstructor());
         }
     }
 }

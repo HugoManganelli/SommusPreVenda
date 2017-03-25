@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace SommusPreVenda.Domain.Interfaces.Repositories
 {
-    public interface IFormaPagamentoRepository
+    public interface IPreVendaItemRepository
     {
-        FormaPagamento Get(int formapagamentoId);
-        List<FormaPagamento> Get();
+        void Add(PreVendaItem preVendaItem);
     }
 }

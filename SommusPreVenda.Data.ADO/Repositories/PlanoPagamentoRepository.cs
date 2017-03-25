@@ -10,60 +10,60 @@ using System.Threading.Tasks;
 
 namespace SommusPreVenda.Data.ADO.Repositories
 {
-    public class FormaPagamentoRepository: IFormaPagamentoRepository
+    public class PlanoPagamentoRepository: IPlanoPagamentoRepository
     {
-        public FormaPagamento Get(int formapagamentoId)
+        public PlanoPagamento Get(int planoPagamentoId)
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append(" SELECT * FROM srv_formas_pagamento ");
+            query.Append(" SELECT * FROM srv_planos_pagamento ");
             query.Append(" WHERE                              ");
-            query.Append(" fpg_codigo=?codigo AND fpg_ativo=1 ");
+            query.Append(" ppg_codigo=?codigo AND ppg_ativo=1 ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
-            mySqlCommand.Parameters.AddWithValue("?codigo", formapagamentoId);
+            mySqlCommand.Parameters.AddWithValue("?codigo", planoPagamentoId);
             dataTable.Load(mySqlCommand.ExecuteReader());
             if (dataTable.Rows.Count > 0)
             {
                 var row = dataTable.Rows[0];
-                var formaPagamento = new FormaPagamento()
+                var planoPagamento = new PlanoPagamento()
                 {
-                    FormaPagamentoId = Convert.ToInt32(row["fpg_codigo"]),
-                    Descricao = row["fpg_descricao"].ToString()
+                    PlanoPagamentoId = Convert.ToInt32(row["ppg_codigo"]),
+                    Descricao = row["ppg_descricao"].ToString()
                 };
-                return formaPagamento;
+                return planoPagamento;
             }
 
-            return new FormaPagamento();
+            return new PlanoPagamento();
         }
 
-        public List<FormaPagamento> Get()
+        public List<PlanoPagamento> Get()
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append(" SELECT * FROM srv_formas_pagamento ");
+            query.Append(" SELECT * FROM srv_planos_pagamento ");
             query.Append(" WHERE                              ");
-            query.Append(" fpg_ativo=1                        ");
+            query.Append(" ppg_ativo=1                        ");
             var mySqlCommand = new MySqlCommand(query.ToString(), 
                 DataContext.MySqlConnection, 
                 DataContext.MySqlTransaction);
             dataTable.Load(mySqlCommand.ExecuteReader());
             if (dataTable.Rows.Count > 0)
             {
-                var formasPagamentos = new List<FormaPagamento>();
+                var planosPagamento = new List<PlanoPagamento>();
                 for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
                     var row = dataTable.Rows[i];
-                    var formaPagamento = new FormaPagamento()
+                    var planoPagamento = new PlanoPagamento()
                     {
-                        FormaPagamentoId = Convert.ToInt32(row["fpg_codigo"]),
-                        Descricao = row["fpg_descricao"].ToString()
+                        PlanoPagamentoId = Convert.ToInt32(row["ppg_codigo"]),
+                        Descricao = row["ppg_descricao"].ToString()
                     };
-                    formasPagamentos.Add(formaPagamento);
+                    planosPagamento.Add(planoPagamento);
                 }
-                return formasPagamentos;
+                return planosPagamento;
             }
-            return new List<FormaPagamento>();
+            return new List<PlanoPagamento>();
         }
 
     }

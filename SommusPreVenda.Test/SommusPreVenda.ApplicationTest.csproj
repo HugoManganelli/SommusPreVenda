@@ -54,8 +54,9 @@
   <ItemGroup>
     <Compile Include="Application\BaseApplicationTest.cs" />
     <Compile Include="Application\ClienteApplicationTest.cs" />
-    <Compile Include="Application\FormaPagamentoTest.cs" />
+    <Compile Include="Application\PlanoPagamentoApplicationTest.cs" />
     <Compile Include="Application\ProdutoApplicationTest.cs" />
+    <Compile Include="Application\PreVendaItemApplicationTest.cs" />
     <Compile Include="Application\UsuarioApplicationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

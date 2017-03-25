@@ -33,7 +33,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\DataContext.cs" />
-    <Compile Include="Repositories\FormaPagamentoRepository.cs" />
+    <Compile Include="Repositories\PlanoPagamentoRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>

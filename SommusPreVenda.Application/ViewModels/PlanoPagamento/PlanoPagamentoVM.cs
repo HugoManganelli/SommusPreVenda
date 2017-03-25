@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SommusPreVenda.Application.ViewModels.FormaPagamento
 {
-    public class FormaPagamentoVM
+    public class PlanoPagamentoVM
     {
-        public int FormaPagamentoId { get; set; }
+        public int PlanoPagamentoId { get; set; }
         public string Descricao { get; set; }
     }
 }

@@ -31,7 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Application\ClienteApplication.cs" />
-    <Compile Include="Application\FormaPagamentoApplication.cs" />
+    <Compile Include="Application\PlanoPagamentoApplication.cs" />
+    <Compile Include="Application\PreVendaItemApplication.cs" />
     <Compile Include="Application\ProdutoApplication.cs" />
     <Compile Include="Application\UsuarioApplication.cs" />
     <Compile Include="DependencyInjection\Interfaces\IDependencyInjection.cs" />
@@ -39,7 +40,9 @@
     <Compile Include="DependencyInjection\Services\DependencyInjectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Cliente\ClienteVM.cs" />
-    <Compile Include="ViewModels\FormaPagamento\FormaPagamentoVM.cs" />
+    <Compile Include="ViewModels\PlanoPagamento\PlanoPagamentoVM.cs" />
+    <Compile Include="ViewModels\PreVendaItem\PreVendaItemVM.cs" />
+    <Compile Include="ViewModels\PreVendaItem\ProdutoPreVendaItemVM.cs" />
     <Compile Include="ViewModels\Produto\ProdutoVM.cs" />
     <Compile Include="ViewModels\Usuario\UsuarioVM.cs" />
   </ItemGroup>

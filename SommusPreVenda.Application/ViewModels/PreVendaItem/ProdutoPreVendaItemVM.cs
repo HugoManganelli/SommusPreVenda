@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SommusPreVenda.Domain.Entities
+namespace SommusPreVenda.Application.ViewModels.PreVendaItem
 {
-    public class FormaPagamento
+    public class ProdutoPreVendaItemVM
     {
-        public int FormaPagamentoId { get; set; }
+        public int ProdutoPreVendaItemId { get; set; }
         public string Descricao { get; set; }
     }
 }

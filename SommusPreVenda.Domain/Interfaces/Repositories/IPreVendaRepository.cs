@@ -10,5 +10,15 @@ namespace SommusPreVenda.Domain.Interfaces.Repositories
     public interface IPreVendaRepository
     {
         void Add(PreVenda preVenda);
+
+        ulong GetNumeroDAVPreVenda();
+
+        void AddContadorDAV();
+
+        void UpdateContadorDAV(ulong numeroPreVenda);
+
+        void TravaTabelaContador();
+
+        void DestravaTabelaContador();
     }
 }

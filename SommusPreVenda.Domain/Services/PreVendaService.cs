@@ -41,6 +41,22 @@ namespace SommusPreVenda.Domain.Services
 
                 if (ValidaPreVenda(preVenda))
                 {
+                    _preVendaRepository.TravaTabelaContador();
+                    preVenda.NumeroDAVPreVenda = _preVendaRepository.GetNumeroDAVPreVenda();
+                    if (preVenda.NumeroDAVPreVenda == 0)
+                    {
+                        preVenda.NumeroDAVPreVenda = 1;
+                        _preVendaRepository.AddContadorDAV();
+                    }
+                    else
+                    {
+                        _preVendaRepository.UpdateContadorDAV(preVenda.NumeroDAVPreVenda);
+                    }
+                    _preVendaRepository.DestravaTabelaContador();
+                    preVenda.NomeComputador = "Celular";
+                    preVenda.QuantidadeItens = preVenda.PreVendaItens.Count();
+                    preVenda.Data = DateTime.Today;
+                    preVenda.Hora = DateTime.Now;
                     _preVendaRepository.Add(preVenda); 
                 }
 

@@ -7,6 +7,7 @@
         public decimal Quantidade { get; set; }
         public decimal PrecoUnitario { get; set; }
         public decimal PrecoTotal { get; set; }
+        public decimal PrecoTotalBruto { get; set; }
         public decimal Desconto { get; set; }
         public Produto Produto { get; set; }
     }

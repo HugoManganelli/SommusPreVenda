@@ -57,6 +57,10 @@ namespace SommusPreVenda.Domain.Services
                     preVenda.QuantidadeItens = preVenda.PreVendaItens.Count();
                     preVenda.Data = DateTime.Today;
                     preVenda.Hora = DateTime.Now;
+                    if (preVenda.Desconto>0)
+                    {
+                        preVenda.ConcedeuDesconto = preVenda.Usuario;
+                    }
                     _preVendaRepository.Add(preVenda); 
                 }
 
@@ -65,6 +69,13 @@ namespace SommusPreVenda.Domain.Services
                 {
                     preVendaItens[i].PreVendaId = preVenda.PreVendaId;
                     preVendaItens[i].Registro = i + 1;
+                    preVendaItens[i].Data = preVenda.Data;
+                    preVendaItens[i].Hora = preVenda.Hora;
+                    preVendaItens[i].Usuario = preVenda.Usuario;
+                    if (preVendaItens[i].Desconto>0)
+                    {
+                        preVendaItens[i].ConcedeuDesconto = preVenda.Usuario;
+                    }
 
                     _preVendaItemRepository.Add(preVendaItens[i]);
                 }

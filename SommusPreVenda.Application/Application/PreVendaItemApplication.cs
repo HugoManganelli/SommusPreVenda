@@ -9,7 +9,7 @@ namespace SommusPreVenda.Application.Application
 {
     public static class PreVendaItemApplication
     {
-        private static readonly PreVendaItemService _preVendaItemService = new PreVendaItemService() { };
+        private static readonly PreVendaItemService _preVendaItemService = new PreVendaItemService() {};
 
         public static string ResponseMessage
         {
@@ -25,13 +25,6 @@ namespace SommusPreVenda.Application.Application
             {
                 return _preVendaItemService.ResponseService.Type.ToString();
             }
-        }
-
-        public static decimal CalculaPrecoTotal(decimal quantidade, decimal precoUnitario, decimal desconto)
-        {
-            var valorTotal = _preVendaItemService.CalculaPrecoTotal(quantidade, precoUnitario, desconto);
-
-            return valorTotal;
-        }
+        }        
     }
 }

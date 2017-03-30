@@ -34,6 +34,7 @@
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\DataContext.cs" />
     <Compile Include="Repositories\PlanoPagamentoRepository.cs" />
+    <Compile Include="Repositories\PreVendaItensRepository.cs" />
     <Compile Include="Repositories\PreVendaRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\UsuarioRepository.cs" />

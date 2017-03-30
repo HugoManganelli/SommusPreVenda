@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Application\ClienteApplication.cs" />
     <Compile Include="Application\PlanoPagamentoApplication.cs" />
+    <Compile Include="Application\PreVendaApplication.cs" />
     <Compile Include="Application\PreVendaItemApplication.cs" />
     <Compile Include="Application\ProdutoApplication.cs" />
     <Compile Include="Application\UsuarioApplication.cs" />
@@ -43,6 +44,10 @@
     <Compile Include="ViewModels\PlanoPagamento\PlanoPagamentoVM.cs" />
     <Compile Include="ViewModels\PreVendaItem\PreVendaItemVM.cs" />
     <Compile Include="ViewModels\PreVendaItem\ProdutoPreVendaItemVM.cs" />
+    <Compile Include="ViewModels\PreVenda\ClientePreVendaVM.cs" />
+    <Compile Include="ViewModels\PreVenda\PlanoPagamentoPreVendaVM.cs" />
+    <Compile Include="ViewModels\PreVenda\PreVendaVM.cs" />
+    <Compile Include="ViewModels\PreVenda\UsuarioPreVendaVM.cs" />
     <Compile Include="ViewModels\Produto\ProdutoVM.cs" />
     <Compile Include="ViewModels\Usuario\UsuarioVM.cs" />
   </ItemGroup>

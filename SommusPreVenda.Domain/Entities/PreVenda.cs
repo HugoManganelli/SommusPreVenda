@@ -15,6 +15,7 @@ namespace SommusPreVenda.Domain.Entities
         public DateTime Hora { get; set; }        
         public Usuario Usuario { get; set; }
         public Cliente Cliente { get; set; }
+        public Usuario ConcedeuDesconto { get; set; }
         public PlanoPagamento PlanoPagamento { get; set; }
         public List<PreVendaItem> PreVendaItens { get; set; }
 

@@ -39,10 +39,10 @@ namespace SommusPreVenda.Application.Application
             return clienteVM;
         }
 
-        public static List<ClienteVM> Get()
+        public static List<ClienteVM> Get(string pesquisa)
         {
-            var clientes = _clienteService.Get();
-            var clientesVM = Mapper.Map<List<Cliente>, List<ClienteVM>>(clientes);
+            var clientes = _clienteService.Get(pesquisa);
+            List<ClienteVM> clientesVM = Mapper.Map<List<Cliente>, List<ClienteVM>>(clientes);
 
             return clientesVM;
         }

@@ -58,13 +58,13 @@ namespace SommusPreVenda.Domain.Services
             return cliente;
         }
 
-        public List<Cliente> Get()
+        public List<Cliente> Get(string pesquisa)
         {
             var clientes = new List<Cliente>();
             try
             {
                 _dataContext.BeginTransaction();
-                clientes = _clienteRepository.Get();
+                clientes = _clienteRepository.Get(pesquisa);
 
                 if (clientes.Count == 0)
                 {

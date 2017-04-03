@@ -14,7 +14,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append(" SELECT * FROM srv_pessoas ");
+            query.Append(" SELECT pes_codigo, pes_nome, pes_end_logradouro FROM srv_pessoas ");
             query.Append(" WHERE                     ");
             query.Append(" pes_cliente = 1 AND       ");
             query.Append(" pes_codigo = ?codigo      ");
@@ -36,16 +36,18 @@ namespace SommusPreVenda.Data.ADO.Repositories
             return new Cliente();            
         }
 
-        public List<Cliente> Get()
+        public List<Cliente> Get(string pesquisa)
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append(" SELECT * FROM srv_pessoas ");
-            query.Append(" WHERE                     ");
-            query.Append(" pes_cliente = 1           ");
+            query.Append(" SELECT pes_codigo, pes_nome, pes_end_logradouro FROM srv_pessoas   ");
+            query.Append(" WHERE                       ");
+            query.Append(" pes_cliente = 1 AND         ");
+            query.Append(" pes_nome like ?pesquisa ");
             var mySqlCommand = new MySqlCommand(query.ToString(), 
                 DataContext.MySqlConnection, 
                 DataContext.MySqlTransaction);
+            mySqlCommand.Parameters.AddWithValue("?pesquisa", "%"+pesquisa+"%");
             dataTable.Load(mySqlCommand.ExecuteReader());
             if (dataTable.Rows.Count > 0)
             {

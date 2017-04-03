@@ -21,7 +21,7 @@ namespace SommusPreVenda.Test.Application
         public void ClienteGetAllTest()
         {
             var clientesVM = new List<ClienteVM>();
-            clientesVM = ClienteApplication.Get();
+            clientesVM = ClienteApplication.Get("VISA");
             Assert.AreEqual(ResponseTypeEnum.Success.ToString(), ClienteApplication.ResponseType);
         }
     }

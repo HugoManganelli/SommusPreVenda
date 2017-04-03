@@ -14,11 +14,8 @@ namespace SommusPreVenda.Application.AutoMapper
         protected override void Configure()
         {
             CreateMap<Cliente, ClienteVM>();
-            CreateMap<List<Cliente>, List<ClienteVM>>();
             CreateMap<PlanoPagamento, PlanoPagamentoVM>();
-            CreateMap<List<PlanoPagamento>, List<PlanoPagamentoVM>>();
             CreateMap<Produto, ProdutoVM>();
-            CreateMap<List<Produto>, List<ProdutoVM>>();
             CreateMap<Usuario, UsuarioVM>();
         }
     }

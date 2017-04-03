@@ -40,12 +40,7 @@ namespace SommusPreVenda.Application.Application
         public static UsuarioVM Get(string login, string senha)
         {
             var usuario = _usuarioService.Get(login,senha);
-            var usuarioVM = new MapperConfiguration(x =>
-           {
-               x.CreateMap<Usuario, UsuarioVM>();
-           })
-            .CreateMapper()
-            .Map < Usuario, UsuarioVM>(usuario);
+            var usuarioVM = Mapper.Map<Usuario, UsuarioVM>(usuario);
 
             return usuarioVM;
         }

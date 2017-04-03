@@ -8,6 +8,6 @@ namespace SommusPreVenda.Application.ViewModels.PreVenda
 {
     public class UsuarioPreVendaVM
     {
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
     }
 }

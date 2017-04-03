@@ -30,16 +30,11 @@ namespace SommusPreVenda.Application.Application
                 return _clienteService.ResponseService.Type.ToString();
             }
         }
-
+        
         public static ClienteVM Get(int id)
         {
             var cliente = _clienteService.Get(id);
-            var clienteVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<Cliente, ClienteVM>();
-            })
-            .CreateMapper()
-            .Map<Cliente, ClienteVM>(cliente);
+            var clienteVM = Mapper.Map<Cliente, ClienteVM>(cliente);
 
             return clienteVM;
         }
@@ -47,12 +42,7 @@ namespace SommusPreVenda.Application.Application
         public static List<ClienteVM> Get()
         {
             var clientes = _clienteService.Get();
-            var clientesVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<Cliente, ClienteVM>();
-            })
-            .CreateMapper()
-            .Map<List<Cliente>, List<ClienteVM>>(clientes);
+            var clientesVM = Mapper.Map<List<Cliente>, List<ClienteVM>>(clientes);
 
             return clientesVM;
         }

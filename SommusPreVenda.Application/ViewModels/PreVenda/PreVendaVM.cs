@@ -17,6 +17,6 @@ namespace SommusPreVenda.Application.ViewModels.PreVenda
         public PlanoPagamentoPreVendaVM PlanoPagamento { get; set; }
         public decimal Valor { get; set; }
         public UsuarioPreVendaVM Usuario { get; set; }
-        public List<PreVendaItemVM> PreVendaItensVM { get; set; }
+        public List<PreVendaItemVM> PreVendaItens { get; set; }
     }
 }

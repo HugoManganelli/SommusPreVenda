@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SommusPreVenda.Application.AutoMapper;
 using SommusPreVenda.Application.DependencyInjection.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SommusPreVenda.Test.Application
 {
@@ -14,6 +10,7 @@ namespace SommusPreVenda.Test.Application
         public BaseApplicationTest()
         {
             DependencyInjectionService.Inicializa(Container.GetContainer());
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

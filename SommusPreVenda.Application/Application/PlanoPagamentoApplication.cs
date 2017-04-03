@@ -37,12 +37,7 @@ namespace SommusPreVenda.Application.Application
         public static PlanoPagamentoVM Get(int id)
         {
             var planoPagamento = _planoPagamentoService.Get(id);
-            var planoPagamentoVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<PlanoPagamento, PlanoPagamentoVM>();
-            })
-            .CreateMapper()
-            .Map<PlanoPagamento, PlanoPagamentoVM>(planoPagamento);
+            var planoPagamentoVM = Mapper.Map<PlanoPagamento, PlanoPagamentoVM>(planoPagamento);
 
             return planoPagamentoVM;
         }
@@ -50,12 +45,7 @@ namespace SommusPreVenda.Application.Application
         public static List<PlanoPagamentoVM> Get()
         {
             var planosPagamento = _planoPagamentoService.Get();
-            var planosPagamentosVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<PlanoPagamento, PlanoPagamentoVM>();
-            })
-            .CreateMapper()
-            .Map<List<PlanoPagamento>, List<PlanoPagamentoVM>>(planosPagamento);
+            var planosPagamentosVM = Mapper.Map<List<PlanoPagamento>, List<PlanoPagamentoVM>>(planosPagamento);
 
             return planosPagamentosVM;
         }

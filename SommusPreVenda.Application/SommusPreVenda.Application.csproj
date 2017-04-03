@@ -36,6 +36,9 @@
     <Compile Include="Application\PreVendaItemApplication.cs" />
     <Compile Include="Application\ProdutoApplication.cs" />
     <Compile Include="Application\UsuarioApplication.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="DependencyInjection\Interfaces\IDependencyInjection.cs" />
     <Compile Include="DependencyInjection\Services\Container.cs" />
     <Compile Include="DependencyInjection\Services\DependencyInjectionService.cs" />

@@ -84,6 +84,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
             query.Append(" INSERT INTO srv_contadores(sct_numero_dav_pv) VALUES(2); ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
+            mySqlCommand.ExecuteScalar();
         }
 
         public void UpdateContadorDAV(ulong numeroPreVenda)
@@ -100,14 +101,16 @@ namespace SommusPreVenda.Data.ADO.Repositories
             }
             var mySqlCommand = new MySqlCommand(
                     query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
+            mySqlCommand.ExecuteScalar();
         }
 
         public void TravaTabelaContador()
         {
             var query = new StringBuilder();
-            query.Append(" LOCK TABLES srv_contadores WRITE; ");
+            query.Append(" LOCK TABLE srv_contadores WRITE; ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
+            mySqlCommand.ExecuteScalar();
         }
 
         public void DestravaTabelaContador()
@@ -116,6 +119,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
             query.Append(" UNLOCK TABLES; ");
             var mySqlCommand = new MySqlCommand(
                 query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
+            mySqlCommand.ExecuteScalar();
         }
     }
 }

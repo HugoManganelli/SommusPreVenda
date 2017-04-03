@@ -53,7 +53,7 @@ namespace SommusPreVenda.Domain.Services
                         _preVendaRepository.UpdateContadorDAV(preVenda.NumeroDAVPreVenda);
                     }
                     _preVendaRepository.DestravaTabelaContador();
-                    preVenda.NomeComputador = "Celular";
+                    preVenda.NomeComputador = "SOMMUS9102";
                     preVenda.QuantidadeItens = preVenda.PreVendaItens.Count();
                     preVenda.Data = DateTime.Today;
                     preVenda.Hora = DateTime.Now;
@@ -61,27 +61,31 @@ namespace SommusPreVenda.Domain.Services
                     {
                         preVenda.ConcedeuDesconto = preVenda.Usuario;
                     }
-                    _preVendaRepository.Add(preVenda); 
-                }
+                    _preVendaRepository.Add(preVenda);
 
-                var preVendaItens = preVenda.PreVendaItens;
-                for (var i = 0; i < preVendaItens.Count; i++)
-                {
-                    preVendaItens[i].PreVendaId = preVenda.PreVendaId;
-                    preVendaItens[i].Registro = i + 1;
-                    preVendaItens[i].Data = preVenda.Data;
-                    preVendaItens[i].Hora = preVenda.Hora;
-                    preVendaItens[i].Usuario = preVenda.Usuario;
-                    if (preVendaItens[i].Desconto>0)
+                    var preVendaItens = preVenda.PreVendaItens;
+                    for (var i = 0; i < preVendaItens.Count; i++)
                     {
-                        preVendaItens[i].ConcedeuDesconto = preVenda.Usuario;
+                        preVendaItens[i].PreVendaId = preVenda.PreVendaId;
+                        preVendaItens[i].Registro = i + 1;
+                        preVendaItens[i].Data = preVenda.Data;
+                        preVendaItens[i].Hora = preVenda.Hora;
+                        preVendaItens[i].Usuario = preVenda.Usuario;
+                        if (preVendaItens[i].Desconto > 0)
+                        {
+                            preVendaItens[i].ConcedeuDesconto = preVenda.Usuario;
+                        }
+                        else
+                        {
+                            preVendaItens[i].ConcedeuDesconto = new Usuario();
+                        }
+
+                        _preVendaItemRepository.Add(preVendaItens[i]);
                     }
 
-                    _preVendaItemRepository.Add(preVendaItens[i]);
-                }
-
-                _dataContext.Commit();
-                ResponseService = new ResponseService(ResponseTypeEnum.Success, "Pré-venda cadastrada com sucesso.");
+                    _dataContext.Commit();
+                    ResponseService = new ResponseService(ResponseTypeEnum.Success, "Pré-venda cadastrada com sucesso.");
+                }                
             }
             catch (Exception ex)
             {

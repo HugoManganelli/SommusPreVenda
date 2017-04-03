@@ -56,7 +56,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
             mySqlCommand.Parameters.AddWithValue("?PrecoVenda", preVendaItem.PrecoUnitario);
             mySqlCommand.Parameters.AddWithValue("?Desconto",preVendaItem.Desconto);
             mySqlCommand.Parameters.AddWithValue("?Operador",preVendaItem.Usuario.UsuarioId);
-            mySqlCommand.Parameters.AddWithValue("?ConcedeuDesconto", preVendaItem.ConcedeuDesconto);
+            mySqlCommand.Parameters.AddWithValue("?ConcedeuDesconto", preVendaItem.ConcedeuDesconto.UsuarioId);
             mySqlCommand.ExecuteNonQuery();
 
         }

@@ -34,12 +34,7 @@ namespace SommusPreVenda.Application.Application
         public static ProdutoVM Get(int id)
         {
             var produto = _produtoService.Get(id);
-            var produtoVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<Produto, ProdutoVM>();
-            })
-            .CreateMapper()
-            .Map<Produto, ProdutoVM>(produto);
+            var produtoVM = Mapper.Map<Produto, ProdutoVM>(produto);
 
             return produtoVM;
         }
@@ -47,12 +42,7 @@ namespace SommusPreVenda.Application.Application
         public static List<ProdutoVM> Get()
         {
             var produtos = _produtoService.Get();
-            var produtosVM = new MapperConfiguration(x =>
-            {
-                x.CreateMap<Produto, ProdutoVM>();
-            })
-            .CreateMapper()
-            .Map<List<Produto>, List<ProdutoVM>>(produtos);
+            var produtosVM = Mapper.Map<List<Produto>, List<ProdutoVM>>(produtos);
 
             return produtosVM;
         }

@@ -39,9 +39,9 @@ namespace SommusPreVenda.Application.Application
             return produtoVM;
         }
 
-        public static List<ProdutoVM> Get()
+        public static List<ProdutoVM> Get(string pesquisa)
         {
-            var produtos = _produtoService.Get();
+            var produtos = _produtoService.Get(pesquisa);
             var produtosVM = Mapper.Map<List<Produto>, List<ProdutoVM>>(produtos);
 
             return produtosVM;

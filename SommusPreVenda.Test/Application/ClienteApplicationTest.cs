@@ -18,7 +18,7 @@ namespace SommusPreVenda.Test.Application
         }
 
         [TestMethod]
-        public void ClienteGetAllTest()
+        public void ClienteGetPesquisaTest()
         {
             var clientesVM = new List<ClienteVM>();
             clientesVM = ClienteApplication.Get("VISA");

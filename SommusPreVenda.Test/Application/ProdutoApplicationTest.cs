@@ -18,10 +18,10 @@ namespace SommusPreVenda.Test.Application
         }
 
         [TestMethod]
-        public void ProdutoGetAllTest()
+        public void ProdutoGetPesquisaTest()
         {
             var produtosVM = new List<ProdutoVM>();
-            produtosVM = ProdutoApplication.Get();
+            produtosVM = ProdutoApplication.Get("FACA");
             Assert.AreEqual(ResponseTypeEnum.Success.ToString(), ProdutoApplication.ResponseType);
         }
 

@@ -59,14 +59,14 @@ namespace SommusPreVenda.Domain.Services
             return produto;
         }
 
-        public List<Produto> Get()
+        public List<Produto> Get(string pesquisa)
         {
             var produtos = new List<Produto>();
 
             try
             {
                 _dataContext.BeginTransaction();
-                produtos = _produtoRepository.Get();
+                produtos = _produtoRepository.Get(pesquisa);
 
                 if (produtos.Count == 0)
                 {

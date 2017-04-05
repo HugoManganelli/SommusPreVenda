@@ -43,7 +43,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
             return new Produto();
         }
 
-        public List<Produto> Get()
+        public List<Produto> Get(string pesquisa)
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
@@ -52,16 +52,18 @@ namespace SommusPreVenda.Data.ADO.Repositories
             query.Append(" srv_produtos_estoque ON    ");
             query.Append(" est_produto = prd_codigo   ");
             query.Append(" WHERE                      ");
-            query.Append(" prd_ativo = 1              ");            
+            query.Append(" prd_ativo = 1 AND          ");
+            query.Append(" prd_descricao like ?pesquisa ");
             var mySqlCommand = new MySqlCommand(
-                query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);            
+                query.ToString(), DataContext.MySqlConnection, DataContext.MySqlTransaction);
+            mySqlCommand.Parameters.AddWithValue("?pesquisa", "%" + pesquisa + "%");
             dataTable.Load(mySqlCommand.ExecuteReader());
             if (dataTable.Rows.Count > 0)
             {
                 var produtos = new List<Produto>();
                 for (int i = 0; i < dataTable.Rows.Count; i++)               
                 {
-                    var row = dataTable.Rows[0];
+                    var row = dataTable.Rows[i];
                     var produto = new Produto()
                     {
                         ProdutoId = Convert.ToInt32(row["prd_codigo"]),

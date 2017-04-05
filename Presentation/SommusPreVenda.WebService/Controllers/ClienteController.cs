@@ -10,7 +10,7 @@ namespace SommusPreVenda.WebService.Controllers
         public HttpResponseMessage Get(string pesquisa)
         {
             var clientesVM = ClienteApplication.Get(pesquisa);
-            if (ClienteApplication.ResponseMessage.Equals("Error"))
+            if (ClienteApplication.ResponseType.Equals("Error"))
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ClienteApplication.ResponseMessage);
             }

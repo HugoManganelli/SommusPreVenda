@@ -13,7 +13,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
         {
             var dataTable = new DataTable();
             var query = new StringBuilder();
-            query.Append(" SELECT * FROM srv_operadores ");
+            query.Append(" SELECT ope_codigo, ope_nome, ope_senha_exp FROM srv_operadores ");
             query.Append(" WHERE ope_nome = ?login AND  ");
             query.Append(" ope_senha_exp = ?senha AND   ");
             query.Append(" ope_ativo = 1                ");
@@ -29,7 +29,7 @@ namespace SommusPreVenda.Data.ADO.Repositories
                 {
                     UsuarioId = Convert.ToInt32(row["ope_codigo"]),
                     Login = row["ope_nome"].ToString(),
-                    Senha = row["ope_senha"].ToString()
+                    Senha = row["ope_senha_exp"].ToString()
                 };
                 return usuario;
             }

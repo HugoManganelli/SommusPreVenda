@@ -43,7 +43,7 @@ namespace SommusPreVenda.Domain.Services
                 senha = _criptografiaMD5.CriptografaMD5(senha.PadRight(50, ' '));
                 usuario = _usuarioRepository.Get(login, senha);
 
-                if (usuario.UsuarioId == 0)
+                if (usuario.UsuarioId == null || usuario.UsuarioId == 0)
                 {
                     ResponseService = new ResponseService(ResponseTypeEnum.Warning, "Usuário ou senha incorreto!");
                 }

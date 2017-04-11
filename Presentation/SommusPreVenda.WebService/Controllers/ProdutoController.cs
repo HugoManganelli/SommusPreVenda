@@ -27,5 +27,23 @@ namespace SommusPreVenda.WebService.Controllers
                 });
             }
         }
+
+        public HttpResponseMessage Get(int id)
+        {
+            var produtoVM = ProdutoApplication.Get(id);
+            if (ProdutoApplication.ResponseType.Equals("Error"))
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ProdutoApplication.ResponseMessage);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, new
+                {
+                    Message = ProdutoApplication.ResponseMessage,
+                    Type = ProdutoApplication.ResponseType,
+                    Produto = produtoVM
+                });
+            }
+        }
     }
 }
